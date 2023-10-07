@@ -148,7 +148,7 @@ justify- content:center;
 }
 }
 
-<!-- for the search bar not to go out off view -->
+<!--for the search bar not to go out off view-->
 
 .my-input-container{
      width:95vw
@@ -163,7 +163,7 @@ footer {
 position: relative 
 
 
-when both hieght and width are changed 
+<!--when both hieght and width are changed-->
 
 @media (max-height:570px) and (max-width:600px){
 body {
