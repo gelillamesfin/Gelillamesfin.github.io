@@ -133,6 +133,50 @@ button:hover {
   margin-right: 20px;
 } */
 
+
+
+@media (max-width: 630px){
+#footer-nav{
+    flex-direction:column;
+}
+#footer-left{
+justify-content: center;
+}
+}
+#footer-right{
+justify- content:center;
+}
+}
+
+<!-- for the search bar not to go out off view -->
+
+.my-input-container{
+     width:95vw
+}@media (max-height: 522px){
+ body{
+  overflow-x : hidden;
+}
+section {
+  margin-botton: 20px;
+}
+footer {
+position: relative 
+
+
+when both hieght and width are changed 
+
+@media (max-height:570px) and (max-width:600px){
+body {
+over flow-x:hidden;
+}
+section {
+margin-botton: 13px;
+}
+footer {
+    position: realtive;
+}
+}
+
   
   
  
