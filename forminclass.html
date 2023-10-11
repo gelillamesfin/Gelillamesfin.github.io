@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>class exercise</title>
+    <script>
+      function myfirst() {
+        console.log(" FUNCTION CALLED");
+        document.getElementById("myfirst").style.backgroundColor = "pink";
+        // document.getElementById("myDIV").style.backgroundColor='red';
+      }
+    </script>
+  </head>
+
+  <body>
+    <!-- <form action="./pre.html"> -->
+      <h3>Enter your personal Information</h3>
+      <div
+        style="
+          display: flex;
+          flex-direction: column;
+          width: 150px;
+          justify-content: space-between;
+        "
+      >
+        <label class="myfirst" id="myfirst"> First Name: </label>
+        <input
+          type="text"
+          name="Fname"
+          id="fname"
+          placeholder="Gelilla"
+        /><br />
+        <label> Lase Name: </label>
+        <input type="text" name="lname" id="lname" placeholder="Tafa" />
+        <label>Email: </label>
+        <input
+          type="email"
+          name="email"
+          id="email"
+          placeholder="example@gmail.com"
+        />
+        <label> Country:</label>
+        <select type="dropdown" name="country">
+          <option>US</option>
+          <option>Ethiopia</option>
+          <option>In the middle of nowhere</option>
+          <br />
+        </select>
+
+        <button onclick="myfirst()" style="margin-top: 10px">sumbit</button>
+      </div>
+    </form>
+  </body>
+</html>
