@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple Calc</title>
+    <script>
+      function simplecalc(num) {
+        let nums = document.querySelector("textarea");
+        nums.value = nums.value + num;
+      }
+
+      function calculator() {
+        let textvalue = document.querySelector("textarea").value;
+        let lhs, rhs, oper;
+
+        for (let i = 0; i < textvalue.length; i++) {
+          if (i == 0) {
+            lhs = parseInt(textvalue[0]);
+          } else if (textvalue[i] == "+" || textvalue[i] == "-") {
+            oper = textvalue[i];
+          } else {
+            rhs = parseInt(textvalue[i]);
+          }
+        }
+        let results = oper == "+" ? lhs + rhs : lhs - rhs;
+      }
+      document.querySelector("textarea").value = results;
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <textarea></textarea>
+    <button onclick="calculator();">Enter</button>
+    <div>
+      <button onclick="simplecalc(0);">0</button>
+      <button onclick="simplecalc(1);">1</button>
+      <button onclick="simplecalc(2);">2</button><br />
+      <button onclick="simplecalc(3);">3</button>
+      <button onclick="simplecalc(4);">4</button>
+      <button onclick="simplecalc(5);">5</button><br />
+      <button onclick="simplecalc(6);">6</button>
+      <button onclick="simplecalc(7);">7</button>
+      <button onclick="simplecalc(8);">8</button><br />
+      <button onclick="simplecalc(9);">9</button>
+      <button onclick="simplecalc('+');">+</button>
+      <button onclick="simplecalc('-');">-</button><br />
+      <button onclick="simplecalc('*');">*</button>
+      <button onclick="simplecalc('/');">/</button>
+      <button onclick="simplecalc('=');">=</button>
+    </div>
+  </body>
+</html>

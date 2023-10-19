@@ -1,0 +1,59 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TodoList</title>
+  </head>
+  <body>
+    <label for="todo"> To-do</label>
+    <input
+      type="text"
+      name="todo"
+      placeholder="Enter your todo list "
+      id="todo"
+    />
+    <button name="todo" id="add" onclick="fortodo();">ADD</button>
+
+    <ul id="ull">
+      <li></li>
+    </ul>
+
+    <script>
+      function fortodo() {
+        let inputlist = document.getElementById("todo");
+        let todolist = document.getElementById("ull");
+        let newlist = document.createElement("li");
+        newlist.innerHTML = inputlist.value;
+        todolist.append(newlist);
+        inputlist.value = "";
+      }
+    </script>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>todolist</title>
+    <script>
+      function clickhandler() {
+        let userinput = document.getElementById("todo");
+        let unordered = document.getElementById("lists");
+        let newtodos = document.createElement("li");
+        newtodos.innerHTML = userinput.value;
+        unordered.append(newtodos);
+        userinput.value = "";
+        // let newtodo = userinput.value;
+        // todos.innerHTML = newtodo;
+        // userinput = "";
+      }
+    </script>
+    <label for="inputs">To-do</label>
+    <input type="text" id="todo" name="inputs" />
+    <button id="button1" onclick="clickhandler();">Add</button>
+    <ul id="lists"></ul>
+  </head>
+  <body></body>
+</html>
