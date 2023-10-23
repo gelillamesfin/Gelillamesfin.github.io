@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>simple Calc</title>
+    <script>
+      function simplecalc(num) {
+        let nums = document.querySelector("textarea");
+        nums.value = nums.value + num;
+      }
+
+      // function calculator() {
+      //   let textvalue = document.querySelector("textarea").value;
+      //   let lhs, rhs, oper;
+
+      //   for (let i = 0; i < textvalue.length; i++) {
+      //     if (i == 0) {
+      //       lhs = parseInt(textvalue[0]);
+      //     } else if (textvalue[i] == "+" || textvalue[i] == "-") {
+      //       oper = textvalue[i];
+      //     } else {
+      //       rhs = parseInt(textvalue[i]);
+      //     }
+      //   }
+      //   let results = oper == "+" ? lhs + rhs : lhs - rhs;
+      // }
+      // document.querySelector("textarea").value = results;
+    </script>
+    <style></style>
+  </head>
+  <body>
+    <!-- <textarea style="width: 70px;" name="txt"></textarea> -->
+  
+  
+  <div class="'container">
+    <form>
+
+   <input type="text" name="txt"> 
+  </div>
+    <div>
+      <input type="button" value='0' onclick="txt.value += '0'">
+      <input type="button" value='1' onclick="txt.value += '1'">
+      <input type="button" value='2' onclick="txt.value += '2'"><br />
+      <input type="button" value='3' onclick="txt.value += '3'">
+      <input type="button" value='4' onclick="txt.value += '4'">
+      <input type="button" value='5' onclick="txt.value += '5'"><br />
+      <input type="button" value='6' onclick="txt.value += '6'">
+      <input type="button" value='7' onclick="txt.value += '7'">
+      <input type="button" value='8' onclick="txt.value += '8'"><br />
+      <input type="button" value='9' onclick="txt.value += '9'">
+      <input type="button" value='+' onclick="txt.value += '+'">
+      <input type="button" value='-' onclick="txt.value += '-'"><br />
+      <input type="button" value='*' onclick="txt.value += '*'">
+      <input type="button" value='/' onclick="txt.value += '/'">
+      <input type="button" value='=' onclick="txt.value=eval(txt.value)">
+    </div>
+   
+    <button onclick="calculator();">Enter</button>
+  </form>  
+  </body>
+</html>

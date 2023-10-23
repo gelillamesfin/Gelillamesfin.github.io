@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my practice</title>
+    <style>
+      img {
+        height: 100px;
+      }
+    </style>
+    <!-- 1. Change Text of Div,P,textInput,link  -->
+    <!---change the image -->
+    <script>
+      function changes() {
+        let firstinput = document.getElementById("input1");
+        let input2 = document.getElementById("txts");
+        console.log(firstinput.value, input2.value);
+        console.log();
+        let firstvalue = firstinput.value;
+        firstinput.value = input2.value;
+        input2.value = firstvalue;
+      }
+      function changediv() {
+        let mydiv = document.querySelector("div");
+        mydiv.innerHTML = "this is the new div I have created.";
+      }
+      function changep() {
+        let para = document.querySelector("p");
+        para.innerHTML = "this is gelillas practice";
+      }
+      function changetext() {
+        let txts = document.querySelector("textarea");
+        txts.value = "this is updated text";
+      }
+      function updatelink() {
+        let alinks = document.querySelector("a");
+        alinks.innerHTML = "youTube";
+        alinks.setAttribute("href", "https://www.youtube.com/?gl=US");
+      }
+      function Newpic() {
+        let newpics = document.querySelector("img");
+        newpics.setAttribute("src", "./profilepic.png.png");
+      }
+      //   change the value of label and inputtype
+      function chelachange() {
+        let cbox = document.getElementById("checkboz");
+        cbox.setAttribute("type", "radio");
+        let leblcha = document.getElementsByName("body label:nth-child(1)");
+        leblcha.innerHTML = "radio";
+      }
+    </script>
+  </head>
+  <body>
+    <label for="checkboz" id="lab1">checkbox1</label>
+    <input type="checkbox" name="checkboz" id="checkboz" /><br />
+    <label for="txt2">Enter a text </label>
+    <input type="text" id="txt2" placeholder="add something" name="txt2" />
+    <button onclick="chelachange();">update</button>
+    <hr />
+    <div>
+      <label for="input1" class="inputss">firt input </label>
+      <input type="text" id="input1" name="input1" /><br />
+      <label for="name">input</label>
+      <input type="text" name="input2" id="txts" class="inputss" /><br />
+
+      <button id="button1" onclick="changes();">swap</button>
+      <hr />
+      <br />
+      <div id="div1">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quaerat facere
+        repellendus ipsa eveniet est maiores voluptatibus veritatis odio et,
+        architecto perferendis facilis mollitia numquam quasi culpa quibusdam
+        dolorum ad ipsum?
+      </div>
+      <br />
+      <button onclick="changediv();">UPDATE-DIV</button><br />
+      <br />
+      <textarea id="txt"></textarea>
+      <button onclick="changetext();">change text</button><br />
+      <a href="www.google.com">Google</a>
+      <button onclick="updatelink();">getYoutube link</button>
+      <hr />
+      <p id="ps">this is the paragraph</p>
+      <button onclick="changep();">change para</button><br />
+      <hr />
+      <br />
+      <img src="./gu.png" style="height: 100px" />
+      <button onclick="Newpic();">Change picture</button>
+    </div>
+  </body>
+</html>
