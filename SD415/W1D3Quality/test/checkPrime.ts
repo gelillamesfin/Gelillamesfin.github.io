@@ -7,11 +7,11 @@ function checkPrime(num: number): boolean {
   return num > 1;
 }
 
-describe("checkPrime returns true if argument is prime", function () {
-  it("37 is prime", function () {
+describe("checkPrime returns true if argument is prime", function () {
+  it("37is prime", function () {
     assert.strictEqual(checkPrime(37), true);
   });
-  it(" 77 is not prime", function () {
+  it("77 is not prime", function () {
     assert.strictEqual(checkPrime(77), false);
   });
 });
