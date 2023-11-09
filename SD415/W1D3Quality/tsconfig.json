@@ -5,7 +5,7 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "strict": true,
-    "esModuleInterop": true
+    "outDir": "./dist"
   },
   "include": ["*.ts", "./src/*.ts", "./test/*.ts"],
   "ts-node": {

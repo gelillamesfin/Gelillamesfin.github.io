@@ -11,7 +11,6 @@ The bank object should have a transactionsDB property, which will be an array of
 {customerId: 1234, customerTransactions: [10, 50, -40] } would be one element of the array.
 Add any necessary types to the above bank object.
 */
-
 type CustomerRecord = {  //interface for the transaction object
     customerId: number;
     customerTransactions: number[];
@@ -23,58 +22,56 @@ type Bank = {    //interface for the bank object
     debit: (customerId: number, amount: number) => void;
     credit: (customerId: number, amount: number) => void;
     getBalance: (customerId: number) => number;
+    getCustomerById: (customerId: number) => CustomerRecord;
     bankBalance: () => number;
 }
 
 
-export const bank:Bank = {
-    transactionsDB:[],
-    debit:function (id:number,amount:number){
-        const customer=this.transactionsDB.find(function(c){
-            return c.customerId===id;
-        });
-        if (customer){
-            if (amount >0&&this.getBalance(id)>=amount){
-                this.saveTransaction(id,-amount);
-            }
+export const bank = {
+    transactionsDB: [],
+    saveTransaction: function (customerId: number, amount: number) {
+        console.log(customerId, amount)
+    },
+    debit: function (customerId: number, amount: number) {
+        let customer = this.getCustomerById(customerId);
+        if (this.getBalance(customerId) >= amount) {
+            customer.customerTransactions.push(-amount)
         }
     },
-    credit:function (id:number,amount:number){
-        const customer=this.transactionsDB.find(function(c){
-            return c.customerId===id;
-        });
-        if (customer){
-            if (amount>0){
-                this.saveTransaction(id,amount);
+    credit: function (customerId: number, amount: number) {
+        let customer = this.getCustomerById(customerId);
+        customer.customerTransactions.push(amount)
+    },
+    getCustomerById: function (customerId: number) {
+        // first get the customer from the transactionsDB by using the customererId
+        for (let c of this.transactionsDB) {
+            if (c.customerId === customerId) {
+                return c
             }
         }
-        },
-        getBalance:function (id:number){
-            const customer=this.transactionsDB.find(function (c){
-                return c.customerId===id;
-            });
-            if (customer){
-                return customer.customerTransactions.reduce (function (balance,transaction ){
-                    return balance+transaction;
-                },0);
+        return null
+    },
+    getBalance: function (customerId: number) {
+        let customer = this.getCustomerById(customerId);
+        let sum = 0
+        for (let transaction of customer.customerTransactions) {
+            sum += transaction
+        }
+        // iterate over the customerTransactions of that customer
+        // add them up
+        // return the sum
+        return sum;
+    },
+    bankBalance: function () {
+        let sum = 0;
+        for (const customer of this.transactionsDB) {
+            for (const transaction of customer.customerTransactions) {
+                sum += transaction
             }
-        return 0;
-        },
-        saveTransaction:function (id:number,amount:number){
-            const customer=this.transactionsDB.find(function (c){
-                return c.customerId===id;
-            });
-            if (customer){
-                customer.customerTransactions.push(amount);
-            }else {
-                this.transactionsDB.push({customerId:id,customerTransactions:[amount]});
-            }
-        },
-        bankBalance: function (){
-            return this.transactionsDB.reduce((totalBalance,customer)=> totalBalance + this.getBalance(customer.customerId),0);
-        },
-    
-} ;  //define bank object as type Bank
+        }
+        return sum;
+    }
+} as Bank;  //define bank object as type Bank, 
 
 bank.transactionsDB = [
     { customerId: 1, customerTransactions: [10, 50, -40] },
@@ -90,6 +87,5 @@ bank.saveTransaction = function (customerId: number, amount: number) {
         customer.customerTransactions.push(amount);
     }
 };
-
 
 
