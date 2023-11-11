@@ -28,8 +28,8 @@ const student2 = {
 const student3 = {
     studentId: 103,
     quizAnswers: [3, 1, 3,4]
-}//what does push the students into an array , quizAnswers mean on the slide ?
-// const students=[student1, student2, student3];
+}//what does push the students into an array , quizAnswers means on the slide ?
+ const students=[student1, student2, student3];
 // students;
 
 console.log("expect 3: ", computeStudentScore(student1, [3, 1, 2, 4]));
@@ -41,25 +41,23 @@ const answers = stu.quizAnswers;
  let numCorrect = 0;
  for (let i = 0; i < answers.length; i++){
     if (answers[i] === quizKey[i]){
-        numCorrect = numCorrect + 1;
+        numCorrect += 1;
     }
  }
  return numCorrect;
-
+ 
 }
 student2;
 student3;
 console.log( computeStudentScore(student2, [3, 1, 2, 4]));
 console.log( computeStudentScore(student3, [3, 1, 2, 4]));
 
-function gradeQuiz(quizAns:number[],correctAns:number[]):number[]{
-    let score=0;
-    let newArray:[]=[];
-
-    if(i=0;i<=correctAns.length;i++){
-        if (quizAns[i]===correctAns[i]){
-            score+=1;
+function gradeQuiz(students:string[],correctAns:number[]):number[]{
+ const scores:Student={};
+    //let newArray:[]=[];
+     for (const student of students) {
+        scores[student.studentId] = computeStudentScore(student.quizAnswer,answers);
+        
         }
-        newArray.push(score);
+        return scores;
     }
-}

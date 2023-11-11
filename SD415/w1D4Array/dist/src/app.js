@@ -7,7 +7,14 @@ console.log("in app.ts", "sum of [1,2,3] is: ", sum([1, 2, 3]));
  * @returns {number} largest of a, b, c
  */
 export function maxOfThree(aa, b, c) {
-    return 0; //IMPLEMENT THIS -- DO NOT USE MATH.MAX
+    let maxNum = aa;
+    if (b > aa && b > c) {
+        maxNum = b;
+    }
+    if (c > aa && c > b) {
+        maxNum = c;
+    }
+    return maxNum; //IMPLEMENT THIS -- DO NOT USE MATH.MAX\
 }
 /**
  *
