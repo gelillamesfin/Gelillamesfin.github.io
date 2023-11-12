@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai";
 
-import { ucFirst, getMaxSubSum, truncate , camelize, checkSpam, extractCurrencyValue} from "../src/app.js";
+import { ucFirst, getMaxSubSum, truncate , camelize, checkSpam, extractCurrencyValue} from"../src/app.js";
 //import { ucFirst,checkSpam,} from "../src/app.js";
 
  

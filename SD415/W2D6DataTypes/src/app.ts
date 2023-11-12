@@ -5,14 +5,14 @@
  */
 export function ucFirst(str:string):string {
 
-  if (str.length > 0) {
-    
-      return str.charAt(0).toUpperCase() + str.slice(1);
+  if (str.length === 0) {
+    return str; 
   } else {
-    
-      return "";
+    return str.charAt(0).toUpperCase() + str.slice(1);
   }
 }
+
+export default ucFirst;
   /**
    * 
    * @param {*} str 
@@ -41,16 +41,13 @@ export function ucFirst(str:string):string {
 
   export function truncate(str:string, maxlength:number):string {
  
-    if (str.length > maxlength) {
-      return str.slice(0, maxlength - 1) + "…";
-    } else {
-      return str;
-    }
+  if (str.length <= maxlength) {
+    return str;
+  } else {
+    
+    return str.substring(0, maxlength - 1) + "…";
   }
-  
-
-
-
+}
 
 /**
  * 
@@ -82,4 +79,7 @@ export function ucFirst(str:string):string {
   
 
 
-export function extractCurrencyValue(){} 
+export function extractCurrencyValue(str:string){
+
+    return Number(str.replace(/[^0-9]/g, ''));
+  }
