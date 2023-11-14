@@ -1,7 +1,7 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 import { assert } from "chai";
 
-import { Person, doubleNums, doubleAges, filterEven, filterOver10, findEvenAge, findEvenNum } from "../src/arrayPractice.js";
+import { Person, doubleNums, doubleAges, filterEven, filterOver10, findEvenAge, findEvenNum, includesEvenAge } from "../src/arrayPractice.js";
 
 
 let numArray = Array<number>();
@@ -60,7 +60,10 @@ describe("filter practice", function () {
     });
 
     /* complete the following similar to includes even test */
-    it("includes even age -- write this test");
+    //it("includes even age -- write this test");
+    it("includes even age",function (){
+        assert.deepEqual(includesEvenAge(peopleArray),true);
+    });
 
 });
 

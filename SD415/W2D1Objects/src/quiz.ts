@@ -13,6 +13,8 @@ export function gradeQuiz(
 
 
 
-export function gradeQuizLabeled(
+export function gradeQuizLabeled(){
+    
+}
 //IMPLEMENT THIS
 

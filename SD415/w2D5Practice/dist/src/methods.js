@@ -3,10 +3,17 @@ Write a function filterRange(arr, a, b) that gets an array arr, looks for elemen
 The function should not modify the array. It should return the new array.
 */
 export function filterRange(arr, a, b) {
-    return [];
+    const newArry = arr.filter(function (num) {
+        return (num >= a && num <= b);
+    });
+    return newArry;
 }
 export function map2fullName(users) {
     let result = [];
     // FURTHER IMPLEMENTATION REQUIRED HERE
+    return users.map((user) => ({
+        fullName: `${user.name} ${user.surname}`,
+        id: user.id,
+    }));
     return result;
 }
