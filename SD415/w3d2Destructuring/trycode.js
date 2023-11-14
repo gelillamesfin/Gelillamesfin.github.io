@@ -28,8 +28,8 @@ console.log("expect Jim", jim)
 
 // destructure the team onto variables: one (point guard), two (shooting guard), three (small 
 //     forward), four (power forward) and five (center)
+    const{point:one,shooting:two,small:three,power:four, center:five}=team;
     console.log("expect Jim: ", four);
     console.log("expect Bob: ", one);
 
-    const{point:one(point guard), shooting: t}
     

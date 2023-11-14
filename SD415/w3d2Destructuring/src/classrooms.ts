@@ -41,7 +41,10 @@ export const classrooms = [
 /* 
 1.	Write a function collectRoomNumbers that will return an array of all the room nmbers.
 2.	Write a function collectRoomsAndCapacities to return an array with room numbers and capacities in this 
-string format:  [“101::30”, :102::25”, “103::35”].
+string format:  [“101::30”, :102::25”, “103::35”].==>maybe use this kind of code const obj = { a: 5, b: 7, c: 9 };
+for (const [key, value] of Object.entries(obj)) {
+  console.log(`${key}:: ${value}`); // "a 5", "b 7", "c 9"
+}
 3.	Write a function collectLabeledRoomCaps to return room numbers and capacities in this object 
 format [{roomNumber: 101, capacity: 30} , …  ]
 4.	Create a function countStudentsInClassroom(classrooms, roomNumber) that takes the classrooms array and a 

@@ -12,4 +12,8 @@ type SalaryObj = { [key: string]: number };
 
 
 
+ export function  topSalary( obj:SalaryObj ):string {
+let topPaid:string 
  
+return topPaid
+}
