@@ -31,9 +31,9 @@ for (const salary of allthesalaries){
 
 }
 if (topPaid!==null){
-    return (`Top Paid is ${topPaid}`);
+    return (`${topPaid}`);
 }else {
-    return ("no top salary")
+    return ("none")
 }
 }
 
