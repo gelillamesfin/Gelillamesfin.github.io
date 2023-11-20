@@ -22,8 +22,12 @@ export function maxOfThree(aa, b, c) {
  * @returns {number} sum of arr numbers
  */
 export function sum(arr) {
+    let sum = 0;
+    for (const num of arr) {
+        sum += num;
+    }
+    return sum;
     //IMPLEMENT THIS 
-    return 0;
 }
 /**
  *
@@ -32,7 +36,11 @@ export function sum(arr) {
  */
 export function multiply(arr) {
     //IMPLEMENT THIS 
-    return 0;
+    let mult = 1;
+    for (const num of arr) {
+        mult *= num;
+    }
+    return mult;
 }
 /* findLongestWord */
 /**
@@ -41,8 +49,49 @@ export function multiply(arr) {
  * @returns {number} length of longest word
  */
 export function findLongestWord(arr) {
-    //IMPLEMENT THIS 
-    return 0;
+    let longest = arr[0];
+    let totalLength = 0;
+    for (const word of arr) {
+        if (word.length >= longest.length) {
+            longest = word;
+        }
+        totalLength = longest.length;
+    }
+    return totalLength;
+}
+/*4 Arrays have a reverse method that changes the array by inverting the order in which its elements appear. For this exercise, write two functions, reverseArray and
+// reverseArrayInPlace. The first, reverseArray, takes an array as argument and produces a new array that has the same elements in the inverse order. The second,
+// reverseArrayInPlace, does what the reverse method does: it modifies the array given as argument by reversing its
+// elements. This is a method that is very space efficient.  It does not create a new array or copy of the array.
+// It returns the original array. Neither may use the standard reverse method.    */
+export function reverseArray(arr) {
+    const reversedArray = [];
+    for (let i = arr.length - 1; i >= 0; i--) {
+        reversedArray.push(arr[i]);
+    }
+    return reversedArray;
+}
+export function reverseArrayInPlace(arr) {
+    for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+        const temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+    return arr;
+}
+/*5score students*/
+export function scoreExams(studentAnswers, correctAnswers) {
+    const scores = [];
+    for (let i = 0; i < studentAnswers.length; i++) {
+        let score = 0;
+        for (let j = 0; j < studentAnswers[i].length; j++) {
+            if (studentAnswers[i][j] === correctAnswers[j]) {
+                score += 1;
+            }
+        }
+        scores.push(score);
+    }
+    return scores;
 }
 /* 6. Write a function that takes two integers as inputs and returns a 2-dimensional array containing sequential numbers across each row as follows:
 describe("generate array", function () {
@@ -58,5 +107,14 @@ describe("generate array", function () {
  */
 export function generateArray(rows, cols) {
     //IMPLEMENT THIS 
-    return [[0]];
+    let newArray = [];
+    let count = 1;
+    for (let i = 0; i < rows; i++) {
+        let row = [];
+        for (let j = 0; j < cols; j++) {
+            row.push(count++);
+        }
+        newArray.push(row);
+    }
+    return newArray;
 }

@@ -14,6 +14,9 @@ describe("double", function () {
         assert.strictEqual(double(-10), -20);
     });
 });
+/////////
+
+
 // /*  2.	Write a function times100 that takes a number and returns 100 times the number. */
 // describe("times100", function () {
 //     it("tests times100 10", function () {
