@@ -10,24 +10,30 @@ Make the transactionsDB private by making it a local variable in the makeBank fu
  */
 export function makeBank(){
     //implement this
-}
-const bank = { transactionsDB: [], };
-bank.transactionsDB = [
-    { customerId: 1, customerTransactions: [10, 50, -40] },
-    { customerId: 2, customerTransactions: [10, 10, -10] },
-    { customerId: 3, customerTransactions: [5, -5, 55] }];
+    const transactionsDB:Customer[]= [
+        { customerId: 1, customerTransactions: [10, 50, -40] },
+        { customerId: 2, customerTransactions: [10, 10, -10] },
+        { customerId: 3, customerTransactions: [5, -5, 55] }];
+    
 
-bank.getBalance = function (id) {
-    const customer = bank.transactionsDB.find(customer => customer.customerId === id);
+//const bank = { transactionsDB: [], }
+const bank={
+    getBalance:function (id:number) {
+    const customer = transactionsDB.find(customer => customer.customerId === id);
     let balance = 0;
     for (const trans of customer.customerTransactions) { balance += trans; }
     return balance;
-};
+},
 
-bank.bankBalance = function () {
+bankBalance:function () {
     let total = 0;
-    for (const trans of this.transactionsDB) {
+    for (const trans of transactionsDB) {
         total += this.getBalance(trans.customerId);
     }
     return total;
-};
+}
+
+}
+return bank;
+}
+const myBank=makeBank();
