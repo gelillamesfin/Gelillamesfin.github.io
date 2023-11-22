@@ -1,6 +1,6 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 //import { assert } from "chai";
-import { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, sumTreeValues } from "../src/recursion.js";
+//import { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, sumTreeValues } from "../src/recursion.js";
 let list;
 list = {
     value: 1,

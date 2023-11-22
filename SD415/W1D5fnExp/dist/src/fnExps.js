@@ -22,4 +22,4 @@ export function myMap(arr, anyfunc) {
 }
 const arr = [1, 2, 34];
 const timesHundred = myMap(arr, times100);
-console.log(timesHundred);
+//console.log(timesHundred);

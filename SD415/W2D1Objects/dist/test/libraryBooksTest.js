@@ -1,6 +1,6 @@
 /* comment out the import assert line (in /dist/test js mocha file) when running in the browser */
 //import { assert } from "chai";
-import { library, findTitles, findAuthors, findIDs, createBook } from "../src/book.js"; //import all of the app.js functions used in the Mocha tests
+//import { library, findTitles, findAuthors, findIDs, createBook } from "../src/book.js"; //import all of the app.js functions used in the Mocha tests
 /*
 Write a JavaScript program that will accept title, author, and libraryID values from an HTML page and create new book objects for each entry.
 •	Before creating the webpage first write and test the following JavaScript functions:
