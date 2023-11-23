@@ -1,4 +1,5 @@
-export { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, sumTreeValues };
+//export   { sumTo, factorial, fibonacci, outputList, outputListLoop, reverseList, reverseListLoop, TreeNode, sumTreeValues}
+export { sumTo, factorial, fibonacci };
 function sumTo(n) {
     if (n == 1)
         return 1;
@@ -20,3 +21,8 @@ function fibonacci(num) {
         return (num - 1) + fibonacci(num - 2);
     }
 }
+// type TreeNode = {
+//     value: number;
+//     left: TreeNode | null;
+//     right: TreeNode | null;
+// }
